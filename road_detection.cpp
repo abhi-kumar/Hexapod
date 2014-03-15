@@ -9,7 +9,7 @@
 using namespace std;
 using namespace cv;
 
-class findroad{														//class that separates out roads from images
+class findroad{			//class that separates out roads from images
 private:
     Mat path;
 public:
@@ -37,7 +37,7 @@ int main( int argc, const char** argv )
     double t = 0;
 	t = (double)cvGetTickCount();                                   //setting up timer
     Mat Erode;
-    erode(gray,Erode,Mat(),Point(2,2),7);                            //eroding image 7 times.Experimentally best output given by 7 time erode
+    erode(gray,Erode,Mat(),Point(2,2),7);   //eroding image 7 times.Experimentally best output given by 7 time erode
     Mat Dilate;                              
     dilate(gray,Dilate,Mat(),Point(2,2),7);                          //dilating the image
     threshold(Dilate,Dilate,1, 50,THRESH_BINARY_INV);
